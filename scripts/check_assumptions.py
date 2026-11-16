@@ -10,7 +10,7 @@ estimate), then the assumptions it rests on are tested and the matching sensitiv
                       fixed effects), overdispersion (Pearson; negative binomial), serial correlation, linearity,
                       leave-one-patient-out
   D  day-level GLMM   device-day trend (linearity), dexmedetomidine (master flag), slope by ICU death, culture event
-                      study (Fig. S2)
+                      study (reflux before positive respiratory cultures)
   L  linear mixed     EE, feeding, ARR: residual and random-effect normality, residual variance, robust SE (GEE),
                       within estimator (patient fixed effects), linearity, offset constant, leave-one-patient-out
   G  GEE              feeding stop: events, small-sample (bias-reduced) SE, working correlation, within-patient form;
@@ -635,7 +635,7 @@ def sec_D():
         "patient level: Wilcoxon signed-rank on each patient's mean log ratio; patient-bootstrap CI of the pooled ratio",
         pooled(res), np.quantile(bs, .025), np.quantile(bs, .975), stats.wilcoxon(per).pvalue, len(per),
         f"geometric mean of patient ratios {np.exp(per.mean()):.2f}; rate fell in {int((per < 0).sum())} of {len(per)}")
-    # Fig. S2: reflux around clinically triggered positive respiratory cultures, infected patients
+    # Reflux around clinically triggered positive respiratory cultures, infected patients
     base = pd.read_csv(CL / "baseline_patient.csv", dtype={"patient_id": str}, parse_dates=["first_study_day_start"])
     base["patient_id"] = base.patient_id.str.zfill(3)
     ae = pd.read_csv(CL / "outcomes" / "adverse_events_ctr.csv", dtype={"patient_id": str}, parse_dates=["date"])
@@ -650,7 +650,7 @@ def sec_D():
     f["win"] = np.select([f.rel.between(-3, -2), f.rel.between(-1, 0), f.rel.between(1, 2), f.rel >= 3],
                          ["a -3..-2", "b -1..0", "c +1..+2", "d >=+3"], "0 ref")
     f["day_cat"] = np.minimum(f.device_day, 8).astype(int)
-    count_checks("D", "Fig. S2: days -3 to -2 before a positive respiratory culture vs > 3 days before", f, "n_all",
+    count_checks("D", "Positive respiratory culture: days -3 to -2 before a positive respiratory culture vs > 3 days before", f, "n_all",
                  ["win:C", "day_cat:C"], "win[a -3..-2]", "C(win) + C(day_cat)", "C(win)[T.a -3..-2]",
                  "monitored_h", "patient_id")
 

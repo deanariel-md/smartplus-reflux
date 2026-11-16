@@ -6,7 +6,7 @@ Run after build_clinical_tables.py and describe_reflux.py:
 Writes results/descriptive/tables/10_baseline.csv, 11_drugs_glmm.csv, 12_art_counts_sensitivity.csv
 and appends the models to results/descriptive/models.txt.
 
-  10 baseline   Table 1: treated arm (48) and the device cohort (45)
+  10 baseline   baseline table: treated arm (48) and the device cohort (45)
   11 drugs      episodes per day vs sedative, opioid and vasopressor exposure
   12 ART counts patient-level frequency and height from ART's daily reports,
                 adding patients who have no raw logs; agreement with the device-derived values

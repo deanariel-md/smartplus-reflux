@@ -58,7 +58,6 @@ run explore_sedation_dose
 run explore_artefact_check
 run check_assumptions
 run paper_extra_numbers
-run fig_paper
 
 echo
 echo "Done."
