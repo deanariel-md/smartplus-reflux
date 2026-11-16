@@ -422,7 +422,7 @@ grid(ax, "both")
 tag(ax, "c")
 save(fig, "FigS1")
 
-# ================================================================ Fig S2: burstiness
+# ================================================================ Fig S3: burstiness
 fig, ax = plt.subplots(figsize=(3.6, 2.8))
 sn = pd.read_csv(EX / "12_snapshot_vs_continuous.csv")
 for col, c, lab in (("within_factor_2", BLUE, "within twofold of the rest of the day"),
@@ -438,9 +438,9 @@ ax.set_ylabel("Share of windows")
 ax.set_title("A short window against the rest of the day")
 ax.legend(fontsize=6.5, loc="lower right")
 grid(ax)
-save(fig, "FigS2")
+save(fig, "FigS3")
 
-# ================================================================ Fig S3: reflux before positive respiratory cultures
+# ================================================================ Fig S2: reflux before positive respiratory cultures
 win = ["a -3..-2", "b -1..0", "c +1..+2", "d >=+3"]
 wl = ["−3 to −2", "−1 to 0", "+1 to +2", "≥ +3"]
 es = pd.read_csv(EX / "7_infection_event_study.csv")
@@ -482,4 +482,4 @@ ax.text(1, -0.33, "Placebo: median and 95% range\nof 200 draws in 26 patients", 
         color=MUTED, ha="right", va="top")
 grid(ax)
 tag(ax, "b")
-save(fig, "FigS3")
+save(fig, "FigS2")

@@ -67,7 +67,7 @@ Both scripts run the steps below in order and stop at the first error. Tables ar
 | 6 | `device_fault_days.py` | `validation/device_fault_days.csv`, `14_device_fault_days.csv` | Sensitivity analysis |
 | 7 | `build_reflux_axes.py --exclude-days ... --tag _nofault` | `t4/*_nofault` | Sensitivity analysis |
 | 8 | `extract_tube_positions.py` | `t3/tube_events.csv`, `t3/tube_position_segments.parquet` | Tube repositioning (Results, part 2) |
-| 9 | `build_reflux_drain.py` | `t3/reflux_events_7s_drain.parquet`, `drain_runs`, `pump_off_runs` | Figs 1, 2; Table S2 |
+| 9 | `build_reflux_drain.py` | `t3/reflux_events_7s_drain.parquet`, `drain_runs`, `pump_off_runs` | Figs 1, 2; Table S3 |
 | 10 | `build_arr.py` | `t3/arr_minute.parquet` | Feeding results (part 4) |
 | 11 | `describe_reflux.py` | `descriptive/tables/1_coverage.csv` to `9_sensitivity.csv`, `4_course_over_days_glmm.csv`, `models.txt` | Table 1 (monitoring rows); Fig. 1c; device-day trend |
 | 12 | `describe_tube_position.py` | `descriptive/tables/13_*.csv` | Tube repositioning |
@@ -82,18 +82,18 @@ Both scripts run the steps below in order and stop at the first error. Tables ar
 | 21 | `explore_reflux.py` | `1_drivers_within.csv` to `4_rise.csv`, `frame_patient_day.parquet` | Part 2 (course, feeding); input to later steps |
 | 22 | `explore_ventilation.py` | `5_ventilation_*.csv` | Fig. 4a-b; part 3 |
 | 23 | `explore_extubation.py` | `6_extubation_*.csv`, `6_breathing_glmm.csv` | Fig. 2d (minute ventilation); part 3 |
-| 24 | `explore_infection.py` | `7_infection_event_study.csv`, `7_infection_landmark.csv`, `clinical/outcomes/adverse_events_ctr.csv` | Fig. S3a |
-| 25 | `explore_infection_placebo.py` | `7_infection_robustness.csv` | Fig. S3b |
+| 24 | `explore_infection.py` | `7_infection_event_study.csv`, `7_infection_landmark.csv`, `clinical/outcomes/adverse_events_ctr.csv` | Fig. S2a |
+| 25 | `explore_infection_placebo.py` | `7_infection_robustness.csv` | Fig. S2b |
 | 26 | `explore_infection_more.py` | `9_*.csv` | Fig. 4b (culture row); Additional file 1 |
 | 27 | `explore_oxygenation.py` | `10_*.csv` | Fig. 4b (FiO2 and PEEP rows) |
-| 28 | `explore_biomarker_metrics.py` | `12_biomarker_reliability.csv`, `12_snapshot_vs_continuous.csv` | Fig. S2 |
+| 28 | `explore_biomarker_metrics.py` | `12_biomarker_reliability.csv`, `12_snapshot_vs_continuous.csv` | Fig. S3 |
 | 29 | `explore_extubation_discrimination.py` | `13_extubation_discrimination.csv` | Part 3 (Harrell's C) |
-| 30 | `explore_peri_event.py` | `14_peri_event_curves.csv`, `14_peri_event_windows.csv` | Fig. 2a-c; Table S2 |
+| 30 | `explore_peri_event.py` | `14_peri_event_curves.csv`, `14_peri_event_windows.csv` | Fig. 2a-c; Table S3 |
 | 31 | `explore_extubation_alignment.py` | `15_extubation_alignment.csv` | Part 3 (extubation alignment) |
 | 32 | `explore_arr.py` | `17_arr.csv` | Part 4 (active residual release) |
 | 33 | `explore_sedation_dose.py` | `18_sedation_dose.csv` | Fig. 2d, Fig. 3, Fig. 4b; Table S1 |
-| 34 | `explore_artefact_check.py` | `20_artefact_check.csv` | Table S2 |
-| 35 | `check_assumptions.py` | `21_assumption_checks.csv` | Table S3; Table S2 (within-patient rows); Fig. 4b |
+| 34 | `explore_artefact_check.py` | `20_artefact_check.csv` | Table S3 |
+| 35 | `check_assumptions.py` | `21_assumption_checks.csv` | Table S2; Table S3 (within-patient rows); Fig. 4b |
 | 36 | `paper_extra_numbers.py` | `19_paper_extra.csv` | Part 4 (feeding adequacy) |
 | 37 | `fig_paper.py` | `paper_figures/Fig1-4`, `FigS1-S3` (.png, .pdf, .jpg) | Figs 1-4, Figs S1-S3 |
 
