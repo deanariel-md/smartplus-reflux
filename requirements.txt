@@ -1,0 +1,12 @@
+# Python 3.12. Only duckdb and pyarrow versions were recorded for the analysis run;
+# the other packages are unpinned (record the versions you install with `pip freeze`).
+duckdb==1.5.6
+pyarrow>=25
+pandas
+numpy
+scipy
+statsmodels
+lifelines
+scikit-learn
+matplotlib
+openpyxl

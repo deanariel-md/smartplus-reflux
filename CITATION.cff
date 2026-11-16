@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "Continuously recorded gastroesophageal reflux tracks spontaneous breathing and sedation in ventilated patients: a cohort study"
+type: software
+license: MIT
+authors:
+  - family-names: Ariel
+    given-names: Dean
+  - family-names: Kagan
+    given-names: Ilya
+  - family-names: Hellerman-Itshaki
+    given-names: Moran
+  - family-names: Singer
+    given-names: Pierre
